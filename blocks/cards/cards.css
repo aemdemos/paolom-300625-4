@@ -27,6 +27,31 @@
   object-fit: cover;
 }
 
+.cards.cards3 .cards-card-image:has(img) img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.cards.cards6 .cards-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.cards.cards6 .cards-card-image img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgb(44 44 44 / 10%);
+  display: block;
+}
+
 .cards.cards3 > ul {
   display: flex;
   flex-direction: row;
@@ -58,7 +83,6 @@
 }
 
 /* --- ICON REGION --- */
-
 /* Hide all by default for icon region */
 .cards.cards3 .cards-card-image,
 .cards.cards3 > ul > li > .cards-card-body > picture {
@@ -91,14 +115,6 @@
   background: #fff4e0;
 }
 
-.cards.cards3 .cards-card-image:has(img) img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
 /* If .cards-card-image is missing or empty, use first .cards-card-body > picture as icon (middle card) */
 .cards.cards3 > ul > li:not(:has(.cards-card-image img)) > .cards-card-body > picture:first-child {
   display: flex;
@@ -129,19 +145,15 @@
 }
 
 /* --- CARD BODY & TYPOGRAPHY --- */
-.cards.cards3 .cards-card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
 .cards.cards3 .cards-card-body p {
   margin: 0;
   padding: 0;
+}
+
+.cards.cards6 .cards-card-body p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .cards.cards3 .cards-card-body p:first-child {
@@ -153,6 +165,13 @@
   letter-spacing: -0.01em;
 }
 
+.cards.cards6 .cards-card-body p:first-child {
+  font-size: 19px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 4px;
+}
+
 .cards.cards3 .cards-card-body p:nth-child(2) {
   font-size: 16px;
   color: #6b7280;
@@ -162,6 +181,22 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+}
+
+.cards.cards6 .cards-card-body p:nth-child(2) {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 16px;
+}
+
+.cards.cards6 .cards-card-body p:nth-child(3) {
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-bottom: 11px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 .cards.cards3 .cards-card-body p:last-child {
@@ -178,6 +213,81 @@
 .cards.cards3 .cards-card-body p:last-child:hover {
   color: #17a18a;
   text-decoration: underline;
+}
+
+.cards.cards6 .cards-card-body p:nth-last-child(-n+5) {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.cards.cards6 .cards-card-body p:nth-last-child(-n+5) picture img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.cards.cards6 .cards-card-body p:nth-last-child(5) {
+  margin-top: 8px;
+}
+
+/* Star row as a single horizontal line */
+.cards.cards6 .cards-card-body .star-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.cards.cards6 .cards-card-body p.star { /* for future if using a class */
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.cards.cards6 .cards-card-body .stars-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.cards.cards6 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1170px;
+  width: 100%;
+}
+
+.cards.cards6 > ul > li {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgb(44 44 44 / 6%);
+  border: none;
+  padding: 36px 26px 24px;
+  min-width: 320px;
+  max-width: 360px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 @media (width <= 1050px) {
@@ -203,6 +313,20 @@
 
   .cards.cards3 .cards-card-body p:last-child {
     font-size: 16px;
+  }
+}
+
+@media (width <= 900px) {
+  .cards.cards6 > ul {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .cards.cards6 > ul > li {
+    max-width: 90vw;
+    min-width: 0;
   }
 }
 
