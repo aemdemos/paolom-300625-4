@@ -45,3 +45,224 @@
     padding: 40px 32px;
   }
 }
+
+/* Make hero full-bleed and remove artificial box constraints */
+.hero-container > .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Merged .hero.hero2 */
+.hero.hero2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #f8faff;
+  min-height: 100vh;
+  gap: 64px;
+  width: 100%;
+  max-width: unset;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 5vw;
+}
+
+.hero.hero2 > div:first-child {
+  flex: 1 1 50%;
+  order: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 280px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  overflow: visible;
+  padding-right: 4vw;
+}
+
+.hero.hero2 > div:first-child::before {
+  display: block;
+  position: absolute;
+  left: -52px;
+  top: 22px;
+  width: 138px;
+  height: 138px;
+  background: #F6C8B6;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero.hero2 > div:first-child::after {
+  display: block;
+  position: absolute;
+  right: -39px;
+  top: 69px;
+  width: 74px;
+  height: 74px;
+  border: 11px solid #13B887;
+  border-radius: 50%;
+  background: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero.hero2 > div:last-child {
+  flex: 1 1 50%;
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 280px;
+  height: 100%;
+  padding-right: 0;
+}
+
+.hero.hero2 > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 540px;
+  width: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+.hero.hero2 > div:last-child > div > p:first-child {
+  font-size: 56px;
+  font-weight: 800;
+  color: #232323;
+  margin: 0 0 18px;
+  line-height: 1.08;
+  font-family: var(--heading-font-family);
+  letter-spacing: -0.01em;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.hero.hero2 > div:last-child > div > p:nth-child(2) {
+  font-size: 18px;
+  color: #868686;
+  margin: 0 0 34px;
+  line-height: 1.6;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  max-width: 100%;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.hero.hero2 > div:last-child > div > p:nth-child(2) a {
+  color: #3B82F6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.hero.hero2 > div:last-child > div > p:nth-child(3),
+.hero.hero2 > div:last-child > div > p:nth-child(4) {
+  display: inline-block;
+  padding: 13px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 999px;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 3px 16px 0 rgb(22 201 130 / 10%);
+  font-family: var(--body-font-family);
+  border-width: 2px;
+  border-style: solid;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hero.hero2 > div:last-child > div > p:nth-child(3) {
+  background: #16C982;
+  color: #fff;
+  border-color: #16C982;
+  margin-top: 12px;
+}
+
+.hero.hero2 > div:last-child > div > p:nth-child(4) {
+  background: #fff;
+  color: #16C982;
+  border-color: #16C982;
+  box-shadow: none;
+  margin-right: 0;
+  margin-top: 12px;
+}
+
+.hero.hero2 picture,
+.hero.hero2 picture > img {
+  display: block;
+  position: relative;
+  z-index: 2;
+  max-width: 245px;
+  width: 100%;
+  height: auto;
+  border-radius: 36px;
+  box-shadow: 0 10px 40px 0 rgb(0 0 0 / 17%);
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+@media (width <= 1100px) {
+  .hero.hero2 {
+    gap: 32px;
+    padding: 0 2vw;
+    min-height: 600px;
+  }
+
+  .hero.hero2 > div:first-child,
+  .hero.hero2 > div:last-child {
+    min-width: 0;
+  }
+
+  .hero.hero2 > div:last-child > div {
+    max-width: 96vw;
+  }
+
+  .hero.hero2 picture,
+  .hero.hero2 picture > img {
+    max-width: 170px;
+  }
+}
+
+@media (width <= 800px) {
+  .hero.hero2 {
+    flex-direction: column;
+    gap: 28px;
+    min-height: unset;
+    padding: 32px 2vw;
+    max-width: 100vw;
+  }
+
+  .hero.hero2 > div:first-child,
+  .hero.hero2 > div:last-child {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .hero.hero2 > div:last-child > div {
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  .hero.hero2 > div:last-child > div > p:first-child,
+  .hero.hero2 > div:last-child > div > p:nth-child(2) {
+    text-align: center;
+  }
+
+  .hero.hero2 picture,
+  .hero.hero2 picture > img {
+    max-width: 220px;
+  }
+}
