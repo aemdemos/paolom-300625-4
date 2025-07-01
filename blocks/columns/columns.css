@@ -1,3 +1,4 @@
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +30,73 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.columns.columns4 {
+  background: #f9faff;
+  padding: 0;
+}
+
+.columns.columns4 > div {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns4 > div > div {
+  flex: 1 1 0;
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  box-shadow: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 120px;
+  max-width: 100%;
+  padding: 20px 18px 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 1.5px solid #F7C5B6;
+}
+
+.columns.columns4 > div > div > p:first-child {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #23272E;
+  margin: 0 0 8px;
+  text-align: center;
+  letter-spacing: -0.3px;
+  line-height: 1.12;
+}
+
+.columns.columns4 > div > div > p:nth-child(2) {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a0a4a8;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+@media (width <= 900px) {
+  .columns.columns4 > div {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .columns.columns4 > div > div {
+    min-width: 0;
+    padding: 18px 12px 14px;
   }
 }
